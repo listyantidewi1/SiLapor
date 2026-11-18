@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', fn () => redirect(auth()->user()->isAdmin() ? '/kelola' : '/laporan'));
     Route::post('/keluar', [AuthController::class, 'keluar']);
 
-    Route::view('/laporan', 'reports.index');
+    Route::get('/laporan', [ReportController::class, 'index']);
     Route::get('/laporan/buat', [ReportController::class, 'create']);
     Route::post('/laporan', [ReportController::class, 'store']);
     Route::get('/laporan/{report}', [ReportController::class, 'show'])->name('laporan.show');

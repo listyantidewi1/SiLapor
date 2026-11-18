@@ -8,10 +8,18 @@ use App\Models\ReportUpdate;
 use App\Support\Foto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
 class ReportController extends Controller
 {
+    public function index(Request $request)
+    {
+        $reports = $request->user()->reports()->with('category')->latest()->paginate(10);
+
+        return view('reports.index', compact('reports'));
+    }
+
     public function create()
     {
         return view('reports.create', ['categories' => Category::orderBy('name')->get()]);
@@ -49,6 +57,7 @@ class ReportController extends Controller
 
     public function show(Report $report)
     {
+        Gate::authorize('view', $report);
         $report->load('category', 'user', 'updates.user');
 
         return view('reports.show', compact('report'));
@@ -56,6 +65,7 @@ class ReportController extends Controller
 
     public function foto(Report $report)
     {
+        Gate::authorize('view', $report);
         abort_unless($report->photo, 404);
 
         return Storage::response($report->photo);
@@ -63,6 +73,7 @@ class ReportController extends Controller
 
     public function fotoRiwayat(ReportUpdate $update)
     {
+        Gate::authorize('view', Report::findOrFail($update->report_id));
         abort_unless($update->photo, 404);
 
         return Storage::response($update->photo);
