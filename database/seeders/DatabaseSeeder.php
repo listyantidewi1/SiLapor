@@ -2,24 +2,24 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        foreach (['Ruang kelas', 'Laboratorium', 'Toilet', 'Listrik dan lampu', 'Perpustakaan', 'Lapangan dan kantin'] as $nama) {
+            Category::create(['name' => $nama]);
+        }
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // Akun contoh. Kata sandi semuanya: rahasia123
+        $hendra = User::create(['name' => 'Pak Hendra', 'classroom' => 'Sarana prasarana', 'email' => 'hendra@nusabakti.test', 'password' => 'rahasia123']);
+        $hendra->role = 'admin';
+        $hendra->save();
+
+        User::create(['name' => 'Lina', 'classroom' => 'XI RPL 1', 'email' => 'lina@nusabakti.test', 'password' => 'rahasia123']);
+        User::create(['name' => 'Dimas', 'classroom' => 'XI RPL 2', 'email' => 'dimas@nusabakti.test', 'password' => 'rahasia123']);
     }
 }
