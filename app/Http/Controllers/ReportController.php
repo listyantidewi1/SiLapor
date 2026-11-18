@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Report;
+use App\Models\ReportUpdate;
 use App\Support\Foto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -58,5 +59,12 @@ class ReportController extends Controller
         abort_unless($report->photo, 404);
 
         return Storage::response($report->photo);
+    }
+
+    public function fotoRiwayat(ReportUpdate $update)
+    {
+        abort_unless($update->photo, 404);
+
+        return Storage::response($update->photo);
     }
 }

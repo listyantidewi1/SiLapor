@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ReportController as KelolaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReportController;
 use App\Http\Middleware\Admin;
@@ -21,8 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/laporan', [ReportController::class, 'store']);
     Route::get('/laporan/{report}', [ReportController::class, 'show'])->name('laporan.show');
     Route::get('/laporan/{report}/foto', [ReportController::class, 'foto'])->name('laporan.foto');
+    Route::get('/riwayat/{update}/foto', [ReportController::class, 'fotoRiwayat'])->name('riwayat.foto');
 
     Route::middleware(Admin::class)->group(function () {
-        Route::view('/kelola', 'admin.index');
+        Route::get('/kelola', [KelolaController::class, 'index']);
+        Route::post('/kelola/{report}/tanggapan', [KelolaController::class, 'tanggapi'])->name('kelola.tanggapi');
     });
 });
