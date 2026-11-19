@@ -2,9 +2,32 @@
 
 SiLapor adalah aplikasi pengaduan sarana dan prasarana sekolah. Siswa memotret fasilitas yang rusak lalu mengirim laporannya dari HP. Petugas sarana prasarana membalas, mengubah status laporan, dan mengunggah foto setelah perbaikan selesai. Siswa bisa memantau semua itu dari HP-nya sendiri.
 
-Aplikasi ini dibangun dari nol, langkah demi langkah, di video **"Membangun Aplikasi Pengaduan dari Nol dengan Laravel"** di kanal YouTube [@iTeachSWE](https://www.youtube.com/@iTeachSWE). Repositori ini berisi kode lengkapnya, ditambah semua perintah yang di video hanya disebut sekilas.
+Aplikasi ini dibangun dari nol, langkah demi langkah, di video **"Membangun Aplikasi Laravel dari Nol: Lapor Sarana Sekolah"** di kanal YouTube [@iTeachSWE](https://www.youtube.com/@iTeachSWE). Repositori ini berisi kode lengkapnya, ditambah semua perintah yang di video hanya disebut sekilas.
 
 Dibuat dengan Laravel 13, PHP 8.3, MySQL 8, dan Blade. Tidak ada framework JavaScript.
+
+## Tampilan
+
+Semua gambar di bawah ini diambil dari aplikasi yang sedang berjalan, dengan data contoh dari `ContohSeeder`.
+
+**Halaman petugas.** Pak Hendra melihat rekap per status, menyaring laporan, lalu menanggapinya.
+
+| Daftar dan saringan | Detail, riwayat, dan form tanggapan |
+| --- | --- |
+| ![Halaman kelola laporan untuk petugas](docs/gambar/petugas-kelola.png) | ![Detail laporan dengan riwayat dan form tanggapan](docs/gambar/petugas-detail.png) |
+
+**Halaman siswa.** Lina melihat laporannya sendiri dan mengirim laporan baru beserta fotonya.
+
+| Laporan saya | Buat laporan |
+| --- | --- |
+| ![Daftar laporan milik siswa](docs/gambar/siswa-daftar.png) | ![Form buat laporan dengan upload foto](docs/gambar/siswa-buat.png) |
+
+**Di HP.** Tampilannya menyesuaikan layar kecil, jadi siswa bisa memantau laporannya dari mana saja.
+
+<p>
+  <img src="docs/gambar/hp-daftar.png" alt="Daftar laporan di HP" width="300">
+  <img src="docs/gambar/hp-detail.png" alt="Detail laporan di HP" width="300">
+</p>
 
 ## Isi
 
