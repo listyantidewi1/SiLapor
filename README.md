@@ -16,7 +16,8 @@ Dibuat dengan Laravel 13, PHP 8.3, MySQL 8, dan Blade. Tidak ada framework JavaS
 6. [Menjalankan test](#menjalankan-test)
 7. [Memasang di server](#memasang-di-server)
 8. [Tantangan](#tantangan)
-9. [Kalau ada masalah](#kalau-ada-masalah)
+9. [Daftar periksa kode buatan AI](#daftar-periksa-kode-buatan-ai)
+10. [Kalau ada masalah](#kalau-ada-masalah)
 
 ## Yang bisa dilakukan aplikasi ini
 
@@ -341,6 +342,10 @@ Setiap bab di video ditutup dengan satu tantangan. Kerjakan sendiri dulu sebelum
 5. **Bab 6.** Batasi supaya satu siswa hanya bisa mengirim lima laporan per hari.
 6. **Bab 7.** Tambahkan tombol untuk mengunduh daftar laporan yang sedang tampil sebagai berkas CSV.
 7. **Bab 8.** Izinkan siswa membatalkan laporannya sendiri, tetapi hanya selama statusnya masih `baru`.
+
+## Daftar periksa kode buatan AI
+
+Setiap bab di video punya segmen "Cek kerjaan AI". Semua pelajarannya dirangkum menjadi satu daftar di [docs/daftar-periksa-kode-ai.md](docs/daftar-periksa-kode-ai.md). Pakailah daftar itu setiap kali AI menyodorkan kode kepadamu.
 
 ## Kalau ada masalah
 
